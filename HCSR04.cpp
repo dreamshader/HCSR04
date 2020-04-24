@@ -82,11 +82,15 @@ HCSR04::HCSR04( int triggerPin, int echoPin, int redPin,
         pinMode( _pinGreenSignal, OUTPUT );
     }
 
+    digitalWrite( _pinRedSignal,    HCSR04_LED_OFF );
+    digitalWrite( _pinYellowSignal, HCSR04_LED_OFF );
+    digitalWrite( _pinGreenSignal,  HCSR04_LED_OFF );
+
     signalOff();
 
-    setGreenRange( HCSR04_DISTANCE_GREEN_FROM, HCSR04_DISTANCE_GREEN_TO );
+    setGreenRange(  HCSR04_DISTANCE_GREEN_FROM,  HCSR04_DISTANCE_GREEN_TO );
     setYellowRange( HCSR04_DISTANCE_YELLOW_FROM, HCSR04_DISTANCE_YELLOW_TO );
-    setRedRange( HCSR04_DISTANCE_RED_FROM, HCSR04_DISTANCE_RED_TO );
+    setRedRange(    HCSR04_DISTANCE_RED_FROM,    HCSR04_DISTANCE_RED_TO );
 
     signalOn();
 
